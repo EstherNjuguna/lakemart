@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_133443) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_10_062030) do
   create_table "buyers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_133443) do
     t.string "email"
     t.string "password_digest"
     t.string "picture"
-    t.integer "type", default: 0
+    t.integer "user_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
