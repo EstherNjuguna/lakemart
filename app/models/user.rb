@@ -5,5 +5,5 @@ class User < ApplicationRecord
     has_many :reviews, dependent: :destroy
     has_many :orders, dependent: :destroy
     validates :email, uniqueness: true
-has_secure_password
+    # has_secure_password
 end

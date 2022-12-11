@@ -1,5 +1,6 @@
 class AuthenticationController < ApplicationController
     protect_from_forgery with: :null_session
+    before_action :authenticate_user!
     def create_account
         user = User.create(create_params)
         if user.valid?
@@ -9,7 +10,13 @@ class AuthenticationController < ApplicationController
         end
     end
     def login
-    end
+        user = User.find_by(email: params[:email])
+        if user&. authenticate (params[:password])
+           appresponse(status_code: 200, messge: "successfully logged in",body: user)
+else
+    appresponse(status_code: 401, message: "Invalid input", body: user)
+end
+end
     private
    
     def create_params
